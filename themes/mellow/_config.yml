@@ -47,6 +47,9 @@ visit_counter:
   site_uv: true # 访客数量
   site_pv: true # 浏览次数
 
+mouseclick: true
+
+
 ##############################################################################################################################
 
 #####################
@@ -235,7 +238,7 @@ hosted: false
 local_search: true
 
 # 百度统计
-baidu_tongji: #appid
+baidu_tongji: 1e48201e2235f72559bc8bfea42d1eab
 
 # gitment评论系统
 ## https://github.com/imsun/gitment
