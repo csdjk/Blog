@@ -1,0 +1,192 @@
+//custom style
+body{
+    --color-bg: #1f174e;
+    --color-bg-2: #151436;
+    --color-bg-3: #000;
+    --color-link: #8596df;
+    --color-link-hover: #723bb7;
+    background: radial-gradient(ellipse at 30% 48%, var(--color-bg) 0, var(--color-bg-2) 45%, var(--color-bg-3) 150%);
+}
+//左侧背景
+#menu{
+    --color-bg: #1f174e;
+    --color-bg-2: #151436;
+    --color-bg-3: #000;
+    --color-link: #8596df;
+    --color-link-hover: #723bb7;
+    background: radial-gradient(ellipse at 30% 48%, var(--color-bg) 0, var(--color-bg-2) 45%, var(--color-bg-3) 150%);
+}
+
+#main{
+    // transition: 2s cubic-bezier(.18, .81, .3, .89) !important;
+    --color-bg: #1f174e;
+    --color-bg-2: #151436;
+    --color-bg-3: #000;
+    --color-link: #8596df;
+    --color-link-hover: #723bb7;
+    background: radial-gradient(ellipse at 30% 48%, var(--color-bg) 0, var(--color-bg-2) 45%, var(--color-bg-3) 150%);
+}
+#menuSvg label{
+    width: 4rem;
+    height: 4rem;
+}
+@media screen and (max-width: 1240px){
+    #menu-off {
+        display: block;
+    }
+    #menu {
+        -webkit-transform: none;
+        transform: none;
+    }
+   
+}
+
+//文章hover效果
+.post-list .post-list-item:hover, .post-list .post-list-item:active {
+    box-shadow: 0 30px 28px -16px rgba(0, 0, 0, 0.26);
+    transform: translate(0, -4px);
+}
+
+//文章图片
+.container img{
+    height: 400px;
+}
+//头部特效
+.content-header{
+    --color-text:#fff;--color-bg:#1f174e;
+    --color-bg-2:#151436;
+    --color-bg-3:#000;
+    --color-link:#8596df;
+    --color-link-hover:#723bb7;
+    background:radial-gradient(ellipse at 30% 48%,var(--color-bg) 0,var(--color-bg-2) 45%,var(--color-bg-3) 150%)
+}
+.content-header .header-bg{
+    display: none
+}
+.content-header .fade-scale.in{
+    display: none
+}
+
+.content-header .container.tabs-bar{
+    z-index: 1;
+}
+//头部字体颜色
+#menu .brand-wrap{
+    background:rgba(5, 5, 5, 0)
+}
+#menu .introduce{
+    color: white
+}
+#menu .mail{
+    color: white
+}
+
+
+//菜单栏
+#menu-off .icon-lg{
+    display: none
+}
+#menu-toggle .icon-lg{
+    display: none
+}
+.menu--3 label{
+    z-index: 99
+}
+#menu  .scroll-wrap.flex-col{
+    border-top: 1px solid #004eff;
+}
+#menu .nav a{
+    color: white
+}
+//菜单高亮
+#menu .nav li:hover a, #menu .nav li.active a, #menu .nav li:hover .icon, #menu .nav li.active .icon{
+    color: #30f325;
+}
+//标签标题
+.archive-separator{
+    color: white
+
+}
+
+//标签云
+.tags-cloud{
+    margin-bottom: 20px;
+}
+.tags-cloud .title{
+    margin-bottom: 24px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid #004eff;
+}
+.tags-cloud .title h3{
+    margin-bottom: 10px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
+.tags-cloud .title img{
+    width: 28px;
+    margin-right: 10px;
+}
+.tags-cloud ul li a {
+    padding: 0 6px;
+    line-height: 24px;
+}
+
+
+//文章详情页面
+// .post-card{
+//     background:radial-gradient(ellipse at 30% 48%,#1f174e 0,#151436 45%,#000 150%)
+// }
+
+.post-content .highlight{
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #03a9f4;
+    border: 1px solid #03a9f4;
+    border-radius: 10px;
+}
+.post-toc-wrap strong{
+    color: #fff;
+}
+//代码片段 风格
+
+.post-content .code pre{
+    background: radial-gradient(ellipse at 30% 48%, #1f174e 0, #151436 45%, #000 150%);
+    color: #fbfbfb;
+}
+.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
+    color: rgb(255, 87, 34);
+}
+.post-content .highlight .gutter pre{
+    background: none;
+    color: white;
+}
+pre .comment {
+    color: #5f5f5f;
+}
+pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+    color: rgb(255, 160, 0);
+}
+pre .class, pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+    color: #ff5722;
+}
+pre .selector-id, pre .selector-class, pre .keyword, pre .javascript .function{
+    color: #03a9f4;
+}
+pre .variable, pre .title, pre .type, pre .regexp, pre .ruby .constant, pre .xml .tag .title, pre .xml .pi, pre .xml .doctype, pre .html .doctype, pre .selector-pseudo, pre .css .id, pre .css .class, pre .css .pseudo, pre .tag .name{
+    color: #a7dc68;
+}
+
+// background: #13134b;
+// color: #fbfbfb;
+
+//打赏
+#rewardCode{
+    height: 200px;
+}

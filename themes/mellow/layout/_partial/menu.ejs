@@ -1,0 +1,94 @@
+<aside id="menu" <% if(is_post() || page.layout === 'page'){ %>class="hide"<% } %> >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <!-- <i class="icon icon-lg icon-close"></i> -->
+        <!-- mender:李长龙 -->
+        <div id="menuSvg" class="menu back menu--3">
+            <label id="menuSwitch">
+              <input id="menuBtn" type="checkbox" checked style="display: none">
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="30" />
+                <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55" />
+                <path class="line--2" d="M0 50h80" />
+                <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45" />
+              </svg>
+            </label>
+        </div>
+    </a>
+    <div class="brand-wrap">
+      <% if (theme.brand && theme.brand !== "/") { %>
+      <%- fragment_cache('brand_bg', function(){
+        return `<img src="${theme.brand}" class="brand-bg">`;
+      }) %>
+      <% } %>
+      <div class="brand">
+        <a href="<%- url_for(theme.avatar_link) %>" class="avatar waves-effect waves-circle waves-light">
+          <img src="<%- url_for(theme.avatar) %>">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname"><%- config.author %></h5>
+          <a href="mailto:<%= theme.email %>" title="<%= theme.email %>" class="mail">
+            <% for (let i = 0; i < theme.email.length; i++) {%>
+              <span><%= theme.email[i] %></span>
+            <% } %>
+          </a>
+        </hgroup>
+        <% if (theme.menu_link) { %>
+        <ul class="menu-link">
+          <% for ( let prop in theme.menu_link ) {
+              let linkName = prop;
+              let linkContent = theme.menu_link[ prop ];
+              let {url = "/", icon = "file-o"} = (function() {
+                let url, icon;
+                linkContent.replace(/([^\|]+)\s+\|\s+([^\|]+)/g, function() {
+                  return [url, icon] = [arguments[1], arguments[2]];
+                });
+                return {url, icon};
+              })();
+            %>
+              <li>
+                <a href="<%= url %>" target="_blank">
+                  <!-- <i class="icon icon-lg icon-<%= icon %>"></i> -->
+                  <img src="<%= icon %>">
+                </a>
+              </li>
+            <% } %>
+        </ul>
+        <% } %>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        <%
+          var menuItem, isActive = function(item) {
+              var pageUrl = url_for(page.path)
+              return item.url === '/' ? pageUrl === url_for(item.url + 'index.html') : _.startsWith(pageUrl, url_for(item.url))
+          };
+          for (var i in theme.menu) {
+            menuItem = theme.menu[i];
+          %>
+            <li class="<% if(isActive(menuItem)){ %> active<% } %>">
+              <a href="<%- url_for(menuItem.url) %>" <% if(menuItem.target){ %>target="_blank"<% } %> >
+                <i class="icon icon-lg icon-<%= menuItem.icon %>"></i>
+                <%=(menuItem.text || _.startCase(i)) %>
+              </a>
+            </li>
+        <% } %>
+      </ul>
+    </div>
+    <!-- mender: 李长龙 标签云-->
+    <div class="tags-cloud">
+      <div class="title">
+        <img src="/img/icon/tags.png" alt="">
+        <span>标签云</span>
+      </div>
+      <ul class="article-tag-list">
+        <% site.tags.forEach(function(tag, i){ %> 
+              <li class="article-tag-list-item">
+                <a href="<%= url_for('/tags/' + tag.name) %>" class="js-tag article-tag-list-link color<%= tag.name.length % 5 + 1 %>"><%-tag.name%></a>
+              </li>
+            <% }) %>
+      </ul>
+    </div>
+  </div>
+</aside>
