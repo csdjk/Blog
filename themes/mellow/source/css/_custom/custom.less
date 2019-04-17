@@ -30,16 +30,7 @@ body{
     width: 4rem;
     height: 4rem;
 }
-@media screen and (max-width: 1240px){
-    #menu-off {
-        display: block;
-    }
-    #menu {
-        -webkit-transform: none;
-        transform: none;
-    }
-   
-}
+
 
 //文章hover效果
 .post-list .post-list-item:hover, .post-list .post-list-item:active {
@@ -60,6 +51,7 @@ body{
     --color-link-hover:#723bb7;
     background:radial-gradient(ellipse at 30% 48%,var(--color-bg) 0,var(--color-bg-2) 45%,var(--color-bg-3) 150%)
 }
+
 .content-header .header-bg{
     display: none
 }
@@ -189,4 +181,23 @@ pre .variable, pre .title, pre .type, pre .regexp, pre .ruby .constant, pre .xml
 //打赏
 #rewardCode{
     height: 200px;
+}
+
+
+
+
+@media screen and (max-width: 1240px){
+    #menu-off {
+        display: block;
+    }
+    #menu {
+        -webkit-transform: none;
+        transform: none;
+    }
+    .content-header .header-bg{
+        display: block
+    }
+    #titleBg_L{
+        display:none
+    }
 }
