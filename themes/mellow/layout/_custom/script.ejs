@@ -4,17 +4,26 @@
 <script type="text/javascript" src="/js/lcl/vendors.js"></script>
 <script type="text/javascript" src="/js/lcl/lineEffects.js"></script>
 
-<!-- 点击文字  -->
-<script type="text/javascript" src="/js/lcl/mouse_text.js"></script>
 
+<!-- 气泡粒子特效 -->
+<canvas id="particle" class="particle"></canvas>
+<script type="text/javascript" src="/js/lcl/particle.js"></script>
 
-
-<% if (theme.mouseclick) { %>
+<% if (theme.mouseclickEffects == "fireworks") { %>
     <!-- 爆炸红心效果 -->
     <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
     <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
     <script type="text/javascript" src="/js/lcl/mouse_firework.js"></script>
-<% } %>
+<% }else if(theme.mouseclickEffects == "text") {%>
+    <!-- 点击文字  -->
+    <script type="text/javascript" src="/js/lcl/mouse_text.js"></script>
+<% }else if(theme.mouseclickEffects == "bubble") {%>
+    <script>
+    console.log(Particle)
+    Particle.particleAddEvents("mousemove")
     
+    </script>
+
+<% } %>
 
 
