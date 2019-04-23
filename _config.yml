@@ -81,7 +81,7 @@ deploy:
   type: git
   repository: 
     git: git@106.13.9.153:/home/git/repos/blog.git
-    branch: master
+    # branch: master
 
 # Algolia Search API Key
 algolia:

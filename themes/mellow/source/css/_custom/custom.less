@@ -40,6 +40,23 @@ body{
     z-index: 9999;
 }
 
+//banner
+#lineCircleWrapper canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1950px;
+    height: auto;
+}
+#lineCircleBg {
+    z-index: -10;
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    /* filter: blur(3px); */
+    opacity: 0.6;
+}
+
 //文章hover效果
 .post-list .post-list-item:hover, .post-list .post-list-item:active {
     box-shadow: 0 30px 28px -16px rgba(0, 0, 0, 0.26);
